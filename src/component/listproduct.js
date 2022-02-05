@@ -8,9 +8,9 @@ const ListProductHome = {
                     <div class="grid grid-cols-6 gap-8">
                         ${data.map((post) => /*html*/`
                                 <div class="border p-4 hover:border-cyan-300 rounded-sm">
-                                <a href="/news/${post.id}">
+                                <a href="">
                                     <img src="${post.avatar}" alt="">
-                                    <h3 class=""><a href="#" class="text-black font-extrabold text-[14px]">${post.name}</a></h3>
+                                    <h3 class="/product/${post.id}"><a href="" class="text-black font-extrabold text-[14px]">${post.name}</a></h3>
                                     <div>
                                         <i class="fas fa-star text-[10px] text-[#fdd835]"></i>
                                         <i class="fas fa-star text-[10px] text-[#fdd835]"></i>
