@@ -1,0 +1,61 @@
+{
+  "products": [
+    {
+      "name": "Rudolph Corkery",
+      "avatar": "http://placeimg.com/640/480/food",
+      "desc": "desc 2",
+      "price": 1,
+      "id": "2"
+    },
+    {
+      "name": "Mrs. Harold Corwin",
+      "avatar": "http://placeimg.com/640/480/abstract",
+      "desc": "desc 3",
+      "price": 100,
+      "id": "3"
+    },
+    {
+      "name": "Steven Wolf",
+      "avatar": "http://placeimg.com/640/480/transport",
+      "desc": "desc 4",
+      "price": 83,
+      "id": "4"
+    },
+    {
+      "name": "Ida Yundt",
+      "avatar": "http://placeimg.com/640/480/nature",
+      "desc": "desc 5",
+      "price": 75,
+      "id": "5"
+    },
+    {
+      "name": "Rudolph Little",
+      "avatar": "http://placeimg.com/640/480/abstract",
+      "desc": "desc 6",
+      "price": 21,
+      "id": "6"
+    },
+    {
+      "name": "June Robel",
+      "avatar": "http://placeimg.com/640/480/business",
+      "desc": "desc 7",
+      "price": 33,
+      "id": "7"
+    },
+    {
+      "name": "van anh",
+      "desc": "adf",
+      "price": "20",
+      "avatar": "http://res.cloudinary.com/dv9a60utr/image/upload/v1644382650/dinbwkhhikeflxopq8pr.jpg",
+      "id": "rMUAdDF"
+    }
+  ],
+  "users": [
+    {
+      "email": "f@gmail.com",
+      "password": "$2a$10$9qUTLJY7DHa6.oDRIcwNnuA3lQ8aaO7/3QNawK5BMdzgKV5KTN7VS",
+      "username": "vananh",
+      "id": 1
+    }
+  ]
+}

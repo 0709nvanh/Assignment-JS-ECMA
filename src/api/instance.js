@@ -1,7 +1,10 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: "https://616e3423a83a850017caa863.mockapi.io/product"
+    baseURL: "http://localhost:3001",
+    header: {
+        "Content-Type": "application/json",
+    }
 })
 
 export default instance;

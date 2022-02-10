@@ -104,15 +104,51 @@ const HomePage = {
               <h2 class="text-[24px] font-bold text-[#253237]">Popular Category</h2>
               <p class="">Add Popular Categories to weekly line up</p>
               <div class="py-5">
-                <div class="product grid grid-cols-3 gap-5">
-                  <div class="item_product">
-                    <div class="relative overflow-hidden	">
+                <div class="product grid grid-cols-3 gap-5 ">
+                  <div class="item_product relative">
+                    <div class="relative overflow-hidden">
                       <a href="">
                         <img class="hover:scale-105 duration-300 transition-transform ease-linear" src="http://demo.posthemes.com/pos_ecolife/layout3/modules/poslistcategories/images/thumb-1.jpg">
                       </a>
                     </div>
                     <div class="desc-listcategory">
-                      <div class="absolute bottom-[90px] left-[40px]">
+                      <div class="absolute bottom-[50px] left-[40px]">
+                        <div class="name_category">
+                          <h4 class=" text-[18px] font-bold">Fresh Vegetable</h4>
+                        </div>
+                        <div class="number_product text-[14px] text-[#888]">17 product</div>
+                        <div class="view_more hover:translate-x-[8px] duration-300 cursor-pointer hover:text-[#4fb68d]">
+                          <a href="" class="">Shop now<i class="fas fa-play-circle text-green-700 text-[14px] pl-[5px]"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item_product relative">
+                    <div class="relative overflow-hidden">
+                      <a href="">
+                        <img class="hover:scale-105 duration-300 transition-transform ease-linear" src="http://demo.posthemes.com/pos_ecolife/layout3/modules/poslistcategories/images/thumb-3.jpg">
+                      </a>
+                    </div>
+                    <div class="desc-listcategory">
+                      <div class="absolute bottom-[50px] left-[40px]">
+                        <div class="name_category">
+                          <h4 class=" text-[18px] font-bold">Fresh Vegetable</h4>
+                        </div>
+                        <div class="number_product text-[14px] text-[#888]">17 product</div>
+                        <div class="view_more hover:translate-x-[8px] duration-300 cursor-pointer hover:text-[#4fb68d]">
+                          <a href="" class="">Shop now<i class="fas fa-play-circle text-green-700 text-[14px] pl-[5px]"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item_product relative">
+                    <div class="relative overflow-hidden">
+                      <a href="">
+                        <img class="hover:scale-105 duration-300 transition-transform ease-linear" src="http://demo.posthemes.com/pos_ecolife/layout3/modules/poslistcategories/images/thumb-5.jpg">
+                      </a>
+                    </div>
+                    <div class="desc-listcategory">
+                      <div class="absolute bottom-[50px] left-[40px]">
                         <div class="name_category">
                           <h4 class=" text-[18px] font-bold">Fresh Vegetable</h4>
                         </div>
@@ -124,24 +160,7 @@ const HomePage = {
                     </div>
                   </div>
                   
-                  <div class="item_product">
-                    <div class="relative overflow-hidden	">
-                      <a href="">
-                        <img class="hover:scale-105 duration-300 transition-transform ease-linear" src="http://demo.posthemes.com/pos_ecolife/layout3/modules/poslistcategories/images/thumb-1.jpg">
-                      </a>
-                    </div>
-                    <div class="desc-listcategory">
-                      <div class="absolute bottom-[90px] left-[40px]">
-                        <div class="name_category">
-                          <h4 class=" text-[18px] font-bold">Fresh Vegetable</h4>
-                        </div>
-                        <div class="number_product text-[14px] text-[#888]">17 product</div>
-                        <div class="view_more hover:translate-x-[8px] duration-300 cursor-pointer hover:text-[#4fb68d]">
-                          <a href="" class="">Shop now<i class="fas fa-play-circle text-green-700 text-[14px] pl-[5px]"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             <div>

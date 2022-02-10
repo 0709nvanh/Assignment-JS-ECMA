@@ -1,1 +1,7 @@
-import axios from "axios";
+import { get } from "../../../api/product"
+
+const UpdateProduct = {
+    async render(id){
+        const { data } = await get(id)
+    }
+}
