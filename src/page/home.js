@@ -1,9 +1,13 @@
 import FeatureProduct from "../component/featureproduct";
 import ListProductHome from "../component/listproduct";
+import Header from "../component/header";
+import Footer from "../component/footer";
 
 const HomePage = {
   async render() {
     return /*html*/ `
+      <div class="container-xl">
+        <div class="header h-[80px] bg-[#253237]">${Header.render()}</div>
         <div class="relative">
           <div class="banner-small grid grid-cols-2 gap-8 pb-6 px-5 py-6">
             <div class="">
@@ -66,8 +70,6 @@ const HomePage = {
               </div>
             </div>
           </div>
-
-
 
           <div class="best-sellers">
             <div class="title">
@@ -159,15 +161,19 @@ const HomePage = {
                       </div>
                     </div>
                   </div>
-                  
-                  
                 </div>
               </div>
             <div>
           </div>
         </div>
+
+        <div>${Footer.render()}</div>
+      </div>
         
         `;
   },
+  // afterRender(){
+  //   Header.afterRender();
+  // }
 };
 export default HomePage;

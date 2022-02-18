@@ -1,7 +1,9 @@
 import axios from 'axios';
+import { getAll } from '../api/product';
 const FeatureProduct = {
     async render(){
-        const { data } = await axios.get('https://616e3423a83a850017caa863.mockapi.io/product');
+        // cho nay van su dung mockapi nay
+        const { data } = await getAll();
         return /*html*/`
         <div class="py-6">
             <div class="grid grid-cols-4 gap-3">

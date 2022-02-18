@@ -4,11 +4,12 @@ import { getAll } from '../api/product';
 const ListProductHome = {
     async render() {
         const { data } = await getAll();
+        console.log(data);
         return /*html*/`
                 <div class="py-6">
                     <div class="grid grid-cols-4 gap-4">
                         ${data.map((post) => /*html*/`
-                                <div class="border p-4 w-[270px] hover:border-cyan-300 rounded-sm">
+                                <div key={post.id} class="border p-4 w-[270px] hover:border-cyan-300 rounded-sm">
                                 <a href="">
                                     <img class="py-2" src="${post.avatar}" alt="">
                                     <h3 class="py-[5px]"><a href="/product/${post.id}" class="text-black font-bold text-[14px]">${post.name}</a></h3>

@@ -1,7 +1,5 @@
 import Navigo from "navigo";
-import { signin } from "./src/api/user";
-import Footer from "./src/component/footer";
-import Header from "./src/component/header";
+import AdminCate from "./src/page/admin/category";
 import Dashboard from "./src/page/admin/dashboard";
 import AllProductAdmin from "./src/page/admin/product";
 import AddNewProduct from "./src/page/admin/product/add";
@@ -11,39 +9,39 @@ import HomePage from "./src/page/home";
 import Signin from "./src/page/signin";
 import Signup from "./src/page/signup";
 
-const router = new Navigo("/", { linksSelector: "a" });
+const router = new Navigo("/", { linksSelector: "a", hash: true });
 
 const print = async (content,id) => {
-    document.getElementById("header").innerHTML = Header.render();
     document.querySelector('#app').innerHTML = await content.render(id);
-    document.querySelector('#footer').innerHTML = Footer.render();
     if(content.afterRender) content.afterRender(id);
 };
-router.on({
-  "/": () => {
-    print(HomePage)
-  },
-  "/contact": () => {
-    print(ContactPage)
-  },
-  "/product/:id": ({ data }) =>{
-    print(DetailProduct, data.id);
-  },
-  "/admin/dashboard": () => {
-    print(Dashboard);
-  },
-  "/admin/products": () =>{
-    print(AllProductAdmin);
-  },
-  "/admin/products/add": () =>{
-    print(AddNewProduct);
-  },
-  "/signin": () => {
-    print(Signin);
-  },
-  "/signup": () => {
-    print(Signup);
+
+router.on('/admin/*/', () => {
+  console.log("Truy cập đường dẫn admin/*");
+}, {
+  before(done, match){
+    if(localStorage.getItem('user')){
+      const userId = JSON.parse(localStorage.getItem()).id;
+      if(userId == 2){
+        done();
+      } else{
+        document.location.href = "/"
+      }
+    } else {
+      document.location.href = "/"
+    }
   }
+}) 
+router.on({
+  "/": () => { print(HomePage)},
+  "/contact": () => { print(ContactPage)},
+  "/product/:id": ({ data }) => { print(DetailProduct, data.id)},
+  "/admin/dashboard": () => { print(Dashboard)},
+  "/admin/products": () => { print(AllProductAdmin)},
+  "/admin/categories": () => { print(AdminCate)},
+  "/admin/products/add": () => { print(AddNewProduct)},
+  "/signin": () => { print(Signin)},
+  "/signup": () => { print(Signup)}
 
 });
 router.resolve();
