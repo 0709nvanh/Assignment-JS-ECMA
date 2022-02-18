@@ -82,7 +82,7 @@ const HomePage = {
           </div>
 
           <div>
-            <div class="py-5">
+            <div class="">
               <div class="grid grid-cols-2 bg-[#ebebeb]">
                 <div class="img p-4">
                   <img class="pt-12" src="http://demo.posthemes.com/pos_ecolife/layout3/modules/posfeaturedproducts/img/cms.png" alt="">
@@ -164,6 +164,7 @@ const HomePage = {
                 </div>
               </div>
             <div>
+          </div>
           </div>
         </div>
 

@@ -215,11 +215,10 @@ const Header = {
           </div>
           <div class="pr-[10px]">
             <div class="item-icon">
-            <a href="/signin">Sign in</a>
-            <a href="/signup">Sign up</a>
+              <a href="/signin" class="text-[15px] text-white px-2 font-bold mb-[13px] hover:text-[#4fb68d] cursor-pointer">Sign in</a>
+              <a href="/signup" class="text-[15px] text-white px-2 font-bold mb-[13px] hover:text-[#4fb68d] cursor-pointer">Sign up</a>
               <i class="cursor-pointer fas fa-search text-white font-semibold pr-[15px] text-[20px] hover:text-[#588067] transition-all"></i>
-              
-              <i class="cursor-pointer fas fa-shopping-cart text-white font-semibold text-[20px] pl-[8px] hover:text-[#63a77c] transition-all"></i>
+              <a href="/cart"><i class="cursor-pointer fas fa-shopping-cart text-white font-semibold text-[20px] pl-[8px] hover:text-[#63a77c] transition-all"></i></a>
             </div>
           </div>
         </div>`

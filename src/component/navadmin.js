@@ -20,7 +20,7 @@ const NavAdmin = {
                                 <div class="hover:translate-x-[8px] duration-300 cursor-pointer hover:text-[#4fb68d] font-bold p-2"><a class="text-white hover:text-[#4fb68d] p-2 w-full h-[20px]" href="/admin/products"><i class="fas fa-home pr-[5px] text-white"></i>Product</a></div>
                             </div>
                             <div class="hover:bg-gray-800  hover:border rounded-xl border-gray-600">
-                                <div class="hover:translate-x-[8px] duration-300 cursor-pointer hover:text-[#4fb68d] font-bold p-2"><a class="text-white hover:text-[#4fb68d] p-2 w-full h-[20px]" href="/admin/category"><i class="fas fa-home pr-[5px] text-white"></i>Category</a></div>
+                                <div class="hover:translate-x-[8px] duration-300 cursor-pointer hover:text-[#4fb68d] font-bold p-2"><a class="text-white hover:text-[#4fb68d] p-2 w-full h-[20px]" href="/admin/categories"><i class="fas fa-home pr-[5px] text-white"></i>Category</a></div>
                             </div>
                             <div class="hover:bg-gray-800  hover:border rounded-xl border-gray-600">
                                 <div class="hover:translate-x-[8px] duration-300 cursor-pointer hover:text-[#4fb68d] font-bold p-2"><a class="text-white hover:text-[#4fb68d] p-2 w-full h-[20px]" href=""><i class="fas fa-user pr-[5px] text-white"></i>User</a></div>

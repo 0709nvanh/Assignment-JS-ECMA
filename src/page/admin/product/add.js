@@ -1,6 +1,8 @@
-import axios from "axios";
 import { add } from "../../../api/product";
 import NavAdmin from "../../../component/navadmin";
+import axios from "axios";
+import { $ } from "../../../utils/selector";
+import "toastr/build/toastr.min.css";
 
 const AddNewProduct = {
     render(){
@@ -95,7 +97,7 @@ const AddNewProduct = {
                                                                 </div>
                                                             </div>
                                                             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                                                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                                                <button id="btn" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -117,7 +119,7 @@ const AddNewProduct = {
             e.preventDefault();
 
             const file = document.querySelector('#img-product').files[0];
-            const CLOUDINARY = "https://api.cloudinary.com/v1_1/dv9a60utr/image/upload";
+            const CLOUDINARY = "https://api.cloudinary.com/v1_1/dfxsbsoep/image/upload";
             
 
             const formData = new FormData();
@@ -126,7 +128,7 @@ const AddNewProduct = {
 
             const { data } = await axios.post(CLOUDINARY, formData, {
                 headers: {
-                    "Content-Type": "application/x-www-formendcoded"
+                    "Content-Type": "application/form-data"
                 }
             })
 
@@ -135,16 +137,11 @@ const AddNewProduct = {
                 desc: document.querySelector('#desc-product').value,
                 price: document.querySelector('#price-product').value,
                 avatar: data.url
-            })
-            // axios({
-            //     url: "https://api.cloudinary.com/v1_1/dv9a60utr/image/upload",
-            //     method: "POST",
-            //     header:{
-            //         "Content-Type" : "application/x-www-formendcoded"
-            //     },
-            //     data: formData
-            // })
+            })  
+            // toastr.success("Add successfully")     
+            
         })
+        
     }
 }
 export default AddNewProduct;

@@ -1,6 +1,8 @@
 
 import { getAll, remove } from "../../../api/product"
 import NavAdmin from "../../../component/navadmin";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const AllProductAdmin = {
     async render(){
@@ -105,7 +107,7 @@ const AllProductAdmin = {
                 const confirm = window.confirm("May co chac chan muon xoa khong???");
                 if(confirm){
                     // call api
-                    remove(id).then(() => console.log("Da xoa thanh cong"))
+                    remove(id).then(() => toastr.success("Đã xóa thành công"))
                 }
             })
         });

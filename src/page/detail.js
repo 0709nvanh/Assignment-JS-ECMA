@@ -1,12 +1,21 @@
 import { get, getAll } from "../api/product";
+import { AddToCart } from "../utils/cart";
+import { $ } from "../utils/selector";
+
+import Footer from "../component/footer";
+import Header from "../component/header";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const DetailProduct = {
   async render(id) {
     const { data } = await get(id);
-    const products = (await getAll()).filter((product) => product.id !== id);
-    console.log(data);
+    const products = await getAll();
+    // console.log(products);
+    const productItems = products.data.filter((product) => product.id !== id);
     return /*html*/ `
             <div>
+                <div class="header h-[80px] bg-[#253237]">${Header.render()}</div>
                 <div class="text-center relative py-[110px] w-full h-full bg-no-repeat bg-cover" style="background-image: url('http://demo.posthemes.com/pos_ecolife/layout3/themes/theme_ecolife3/assets/img/bg_breadcrumb.jpg')">
                     <div class="container mx-auto">
                         <nav class="text-center">
@@ -21,10 +30,10 @@ const DetailProduct = {
 
                 <div class="wrapper">
                     <div class="container p-4 mx-auto">
-                        <div class="grid grid-rows-3 gap-4">
-                            <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <div class="grid grid-cols-[400px,auto] gap-3">
                                 <div class="image-content px-3">
-                                    <img src="${data.avatar}">
+                                    <img class="w-[300px]" src="${data.avatar}">
                                 </div>
                                 <div class="text-content px-3">
                                     <h1 class="text-[24px] font-black mb-2">${data.name}</h1>
@@ -43,7 +52,7 @@ const DetailProduct = {
                                         <p class="text-[35px]">$${data.price}</p>
                                     </div>
                                     <div class="desc-content justify-center pt-[7px] pb-3">
-                                        <p>${data.desc} Nào nâng ly vì gia đình! Những người gắn bó gần gũi nhất. Dù bạn nói gì, 
+                                        <p class="text-[14px]">${data.desc} Nào nâng ly vì gia đình! Những người gắn bó gần gũi nhất. Dù bạn nói gì, 
                                         bạn cũng biết sẽ luôn được yêu thương, ủng hộ, ngay, luôn và #mãi. Chào đón Năm Mới cùng
                                          những người yêu thương,  cả nhà cùng mở ngay 1 chai #JimBeam , Jim Beam Highball không
                                           màu mè với chất lượng, hương vị hòa quyện tuyệt vời bên cạnh giây phút quây quần.
@@ -53,9 +62,9 @@ const DetailProduct = {
                                     <hr>
                                     <div class="add-to-card grid grid-cols-[100px,auto] py-3">
                                         <div class="number">
-                                            <input type="number" class="w-[90px] border rounded-xl border-zinc-300 outline-none p-3">
+                                            <input type="number" id="inputValue" class="w-[90px] border rounded-xl border-zinc-300 outline-none p-3">
                                         </div>
-                                        <button type="button" class="inline-flex items-center w-[152px] px-4 py-2 border border-transparent rounded-[35px] hover:bg-gray-800 transition-all duration-200 ease-linear shadow-sm text-sm font-medium text-white bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        <button type="button" id="addToCart" class="inline-flex items-center w-[152px] px-4 py-2 border border-transparent rounded-[35px] hover:bg-gray-800 transition-all duration-200 ease-linear shadow-sm text-sm font-medium text-white bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                                             </svg>
@@ -79,28 +88,17 @@ const DetailProduct = {
                                 </div>
                             </div>
 
-
-                            <div class="desc-long container mx-auto py-8">
-                                <div>
-                                    <h2 class="uppercase font-bold text-[24px] text-black">description</h2>
+                            <div class="py-10">
+                                <div class="py-3">
+                                    <h1><p class="font-black text-[18px]">You Might Also Like</p></h1>
+                                    <p><span class="text-[12px] text-[#888888]">Add Related products to weekly line up</span></p>
                                 </div>
-                                <div class="border p-8">
-                                    <ul>
-                                        <li><div>Score extra points when it comes to your sporty look with the Juicy Couture™ Juicy Quilted Terry Track Jacket.</div></li>
-                                        <li><div>Soft terry construction in a quilted design.</div></li>
-                                        <li><div>Brand detail at the back neckline.</div></li>
-                                        <li><div>Front zipper closure.</div></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div>
                                 <div class="grid grid-cols-4 gap-4">
-                                    ${data.map((products) => /*html*/`
+                                    ${productItems.map((item) => /*html*/`
                                             <div class="border p-4 w-[270px] hover:border-cyan-300 rounded-sm">
                                             <a href="">
-                                                <img class="py-2" src="${post.avatar}" alt="">
-                                                <h3 class="py-[5px]"><a href="/product/${post.id}" class="text-black font-bold text-[14px]">${post.name}</a></h3>
+                                                <img class="py-2" src="${item.avatar}" alt="">
+                                                <h3 class="py-[5px]"><a href="/product/${item.id}" class="text-black font-bold text-[14px]">${item.name}</a></h3>
                                                 <div class="py-[5px]">
                                                     <i class="fas fa-star text-[10px] text-[#fdd835]"></i>
                                                     <i class="fas fa-star text-[10px] text-[#fdd835]"></i>
@@ -108,12 +106,13 @@ const DetailProduct = {
                                                     <i class="fas fa-star text-[10px] text-[#fdd835]"></i>
                                                     <i class="fas fa-star text-[10px] text-[#fdd835]"></i>
                                                 </div>
-                                                <p class="text-sm text-gray-500 py-[5px]">$${post.price}.00 </p>                  
+                                                <p class="text-sm text-gray-500 py-[5px]">$${item.price}.00 </p>                  
                                             </a>
                                             <div class="relative group">
                                                 <div class="invisible absolute opacity-0 group-hover:opacity-100 group-hover:visible group-hover:rotate-0 -rotate-[75]">
-                                                    <a href="/" class="hover:translate-y-[10px] ease-linear duration-300"><p class="uppercase text-[14px] hover:text-green-800">add to card</p></a>
+                                                    <button id="btn" class="hover:translate-y-[10px] ease-linear duration-300">add to card</button>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                     `).join("")}
@@ -122,8 +121,17 @@ const DetailProduct = {
                         </div>
                     </div>
                 </div>
+                <div>${Footer.render()}</div>
             </div>
         `;
   },
+  afterRender(id){
+      $('#addToCart').addEventListener('click', async () => {
+          const { data } = await get(id);
+          console.log(data);
+          AddToCart({...data, quantity: $('#inputValue').value ? $('#inputValue').value : 1})
+          toastr.success("Add to success");
+      })
+  }
 };
 export default DetailProduct;

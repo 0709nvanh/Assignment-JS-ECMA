@@ -2,9 +2,13 @@ import { signin } from "../api/user";
 import { $ } from "../utils/selector";
 import toastr from 'toastr';
 import "toastr/build/toastr.min.css"
+import Footer from "../component/footer";
+import Header from "../component/header";
 const Signin = {
     render(){
         return /*html*/`
+                <div class="container-xl">
+                    <div class="header h-[80px] bg-[#253237]">${Header.render()}</div>
                     <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                         <div class="max-w-md w-full space-y-8">
                             <div>
@@ -53,6 +57,8 @@ const Signin = {
                             </form>
                         </div>
                     </div>
+                    <div>${Footer.render()}</div>
+                </div>
         `
     },
     afterRender(){
@@ -66,7 +72,7 @@ const Signin = {
                 localStorage.setItem('user', JSON.stringify(data.user));
                 toastr.success("Đăng nhap thành công, chuyển sang trang sau");
                 setTimeout(() => {
-                    if(data.user.id === 2){
+                    if(data.user.id === 1){
                         document.location.href= "/#/admin/dashboard";
                     } else{
                         document.location.href= "/#/"

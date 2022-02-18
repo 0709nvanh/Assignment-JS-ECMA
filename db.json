@@ -1,18 +1,10 @@
 {
   "products": [
     {
-      "name": "Rudolph Corkery",
-      "avatar": "http://placeimg.com/640/480/food",
-      "desc": "desc 2",
-      "price": 1,
-      "id": "2"
-    },
-    {
+      "id": "3",
       "name": "Mrs. Harold Corwin",
-      "avatar": "http://placeimg.com/640/480/abstract",
-      "desc": "desc 3",
-      "price": 100,
-      "id": "3"
+      "price": "100",
+      "desc": "desc 3"
     },
     {
       "name": "Steven Wolf",
@@ -43,19 +35,33 @@
       "id": "7"
     },
     {
+      "id": "rMUAdDF",
       "name": "van anh",
-      "desc": "adf",
       "price": "20",
-      "avatar": "http://res.cloudinary.com/dv9a60utr/image/upload/v1644382650/dinbwkhhikeflxopq8pr.jpg",
-      "id": "rMUAdDF"
+      "desc": "adf"
+    },
+    {
+      "name": "Product 1",
+      "desc": "Description product 1",
+      "price": "20",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1644938498/Screen_Shot_2022-02-15_at_22.18.47_ecz2ws.png",
+      "id": "_WwkH8e"
+    },
+    {
+      "name": "Product 2",
+      "desc": "Description product 3",
+      "price": "30",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645174050/245529760_399847385007912_7441918846735684092_n_yr76v2.jpg",
+      "id": "TfzAYxU"
+    },
+    {
+      "id": "xf21GOq",
+      "name": "Product 4",
+      "price": "14",
+      "desc": "e"
     }
   ],
-  "category": [
-    {
-      "id": "1",
-      "name": "Category 1",
-      "avatar": "http://placeimg.com/640/480/business"
-    },
+  "categories": [
     {
       "id": "2",
       "name": "Category 2",
@@ -65,19 +71,24 @@
       "id": "1",
       "name": "Category 3",
       "avatar": "http://placeimg.com/640/480/business"
+    },
+    {
+      "name": "Category 4",
+      "avatar": "http://placeimg.com/640/480/business",
+      "id": "75LrUo2"
     }
   ],
   "users": [
     {
-      "email": "f@gmail.com",
-      "password": "$2a$10$9qUTLJY7DHa6.oDRIcwNnuA3lQ8aaO7/3QNawK5BMdzgKV5KTN7VS",
-      "username": "vananh",
-      "id": 1
-    },
-    {
       "email": "admin@gmail.com",
       "password": "$2a$10$3GO3jwgKlJYi.mIMssbEyeYvLp7gz5WW1AmjF3j.irFhgfYl9dEvi",
       "username": "anhnv",
+      "id": 1
+    },
+    {
+      "email": "f@gmail.com",
+      "password": "$2a$10$9qUTLJY7DHa6.oDRIcwNnuA3lQ8aaO7/3QNawK5BMdzgKV5KTN7VS",
+      "username": "vananh",
       "id": 2
     },
     {
@@ -97,6 +108,12 @@
       "password": "$2a$10$.558uSOFTN6ISgFMQmvLd.OApochiaj4XKi/V4qQoC8jNKuM7D/U2",
       "username": "member2",
       "id": 5
+    },
+    {
+      "email": "anh@gmail.com",
+      "password": "$2a$10$3u4GRJArjYHbYptIn8N7HuRWmgPEZNo1QX8PAWCkmBocZp1SDvpvq",
+      "username": "anh",
+      "id": 6
     }
   ]
 }
