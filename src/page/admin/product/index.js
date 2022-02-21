@@ -7,8 +7,6 @@ import "toastr/build/toastr.min.css";
 
 const AllProductAdmin = {
     async render(){
-        // const listCate = await getAll();
-        // const itemCate = await listCate.data.categories;
         const { data } = await getAll();
         console.log(data);
         return /*html*/`
