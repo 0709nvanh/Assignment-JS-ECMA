@@ -1,11 +1,14 @@
 import { add } from "../../../api/product";
 import NavAdmin from "../../../component/navadmin";
 import axios from "axios";
-import { $ } from "../../../utils/selector";
 import "toastr/build/toastr.min.css";
+import { getAll } from "../../../api/category";
+import { $ } from "../../../utils/selector";
 
 const AddNewProduct = {
-    render(){
+    async render(){
+        const listCate = await getAll();
+        const itemCate = await listCate.data;
         return /*html*/`
                 <div class="container-xl">
                     <div class="grid grid-cols-[300px,auto] p-6">
@@ -83,16 +86,26 @@ const AddNewProduct = {
                                                                             </div>
                                                                     </div>
 
-                                                                    <div>
+                                                                    <div class="py-2">
+                                                                        <div class="col-span-3 sm:col-span-2">
+                                                                            <div>
+                                                                                <select name="" id="categoryId" class="form-control shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border transition-all duration-300 ease-linear outline-none p-[5px] border-gray-300 rounded-md" required="required">
+                                                                                    ${itemCate.map(item => /*html*/`
+                                                                                        <option value="${item.id}">${item.name}</option>
+                                                                                    `)}
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+
+                                                                    <div class="">
                                                                         <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
                                                                         <div class="mt-1">
                                                                             <textarea id="desc-product" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border transition-all duration-300 ease-linear outline-none p-[5px] border-gray-300 rounded-md" placeholder="Enter new description"></textarea>
                                                                         </div>
-                                                                        <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
                                                                     </div>
 
                                                                     <div>
-                                                                    <input type="file" id="img-product" class="outline-none focus:ring-indigo-500 focus:border-indigo-500 border-b-2 transition-all duration-300 ease-linear p-[5px] flex-1 block w-full sm:text-sm">
+                                                                        <input type="file" id="img-product" class="outline-none focus:ring-indigo-500 focus:border-indigo-500 border-b-2 transition-all duration-300 ease-linear p-[5px] flex-1 block w-full sm:text-sm">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -136,9 +149,11 @@ const AddNewProduct = {
                 name: document.querySelector('#name-product').value,
                 desc: document.querySelector('#desc-product').value,
                 price: document.querySelector('#price-product').value,
+                categoryId: $('#categoryId').value,
                 avatar: data.url
+            }).then(()=>{
+                document.location.href='/admin/products'
             })  
-            // toastr.success("Add successfully")     
             
         })
         

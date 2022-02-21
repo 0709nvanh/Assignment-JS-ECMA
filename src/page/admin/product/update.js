@@ -139,16 +139,19 @@ const UpdateProduct = {
                 })
                 imgLink = data.url;
             }
-            
+            update({
+                id: id,
+                name: $('#name-product').value,
+                price: $('#price-product').value,
+                desc: $('#desc-product').value,
+                avatar: imgLink ? imgLink : $('#imgPreview').src,
+            }).then(()=>{
+                document.location.href='/admin/products'
+            })
         })
 
-        update({
-            id: id,
-            name: $('#name-product').value,
-            price: $('#price-product').value,
-            desc: $('#desc-product').value,
-            avatar: imgLink ? imgLink : $('imgPreview').src,
-        })
+        
+
         
     }
 }

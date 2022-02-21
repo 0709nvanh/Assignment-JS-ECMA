@@ -48,9 +48,11 @@ const CartPage = {
                             </div>
                             <div class="cart border h-[270px]">
                                 <div class="py-3">
-                                    <div>
-                                        
+                                    <div class="p-5">
+                                        <p>items: <span id="itemTotalQuantity"></span></p>
+                                        <p>Price: <span id="totalPrice"></span> $</p>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -68,16 +70,36 @@ const CartPage = {
         }
     },
     afterRender(){
+        const itemTotalQuantity = $('#itemTotalQuantity');
+        const totalPrice = $('#totalPrice');
+
+        let cart = [];
+        let total = 0;
+        let quantity = 0;
+        cart = JSON.parse(localStorage.getItem('cart'));
+        console.log(cart);
+        if(cart.length>0){
+            cart.forEach(item => {
+                total += (+item.price)*(+item.quantity);
+                quantity += item.quantity;
+            })
+            itemTotalQuantity.innerHTML = quantity;
+            totalPrice.innerHTML = total;
+        }
+
+
         const btns = $('.btn');
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const id = btn.dataset.id;
                 if(btn.classList.contains('btn-increase')){
+                    itemTotalQuantity.innerHTML = +itemTotalQuantity.innerHTML + 1;
                     IncreaseQuantity(id, () => {
                         reRender(CartPage, "#content");
                         toastr.success("Increase successfully");
                     })
                 } else if(btn.classList.contains('btn-decrease')){
+                    itemTotalQuantity.innerHTML = +itemTotalQuantity.innerHTML - 1;
                     DecreaseQuantity(id, () => {
                         reRender(CartPage, "#content");
                         toastr.success("Decrease successfully");
@@ -90,6 +112,7 @@ const CartPage = {
                 }
             })
         });
+        
     }
 }
 export default CartPage;

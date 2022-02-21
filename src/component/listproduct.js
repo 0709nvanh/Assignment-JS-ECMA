@@ -7,7 +7,7 @@ const ListProductHome = {
         console.log(data);
         return /*html*/`
                 <div class="py-6">
-                    <div class="grid grid-cols-4 gap-4">
+                    <div class="grid grid-cols-5 gap-2">
                         ${data.map((post) => /*html*/`
                                 <div key={post.id} class="border p-4 w-[270px] hover:border-cyan-300 rounded-sm">
                                 <a href="">

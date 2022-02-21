@@ -12,7 +12,7 @@ const Header = {
                 <a class="text-[14px] pb-[5px] border-b-2 border-white font-semibold text-[#f6f6f7]" href="/">Home</a>
               </li>
               <li class="ml-[38px] relative group">
-                <a class="text-[14px] group-hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="/category">Category</a>
+                <a class="text-[14px] group-hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="/categories">Category</a>
                 <div class="absolute invisible z-50 opacity-0 duration-300 group-hover:opacity-100 group-hover:visible group-hover:rotate-0 -rotate-[75] 
                 bg-white -left-[50px] top-[40px] p-[20px] box-border w-[1100px] border-2">
                   <div class="flex pb-[20px]">

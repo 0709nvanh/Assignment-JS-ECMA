@@ -1,80 +1,73 @@
 {
   "products": [
     {
-      "id": "3",
-      "name": "Mrs. Harold Corwin",
-      "price": "100",
-      "desc": "desc 3"
+      "id": "_WwkH8e",
+      "name": "Snack rough cuts",
+      "price": "3,5",
+      "desc": "Description product 9",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259274/brixton-patrol-all-terrain-anorak-jacket_wesewj.jpg",
+      "categoryId": "1"
     },
     {
-      "name": "Steven Wolf",
-      "avatar": "http://placeimg.com/640/480/transport",
-      "desc": "desc 4",
-      "price": 83,
-      "id": "4"
-    },
-    {
-      "name": "Ida Yundt",
-      "avatar": "http://placeimg.com/640/480/nature",
-      "desc": "desc 5",
-      "price": 75,
-      "id": "5"
-    },
-    {
-      "name": "Rudolph Little",
-      "avatar": "http://placeimg.com/640/480/abstract",
-      "desc": "desc 6",
-      "price": 21,
-      "id": "6"
-    },
-    {
-      "name": "June Robel",
-      "avatar": "http://placeimg.com/640/480/business",
-      "desc": "desc 7",
-      "price": 33,
-      "id": "7"
-    },
-    {
-      "id": "rMUAdDF",
-      "name": "van anh",
-      "price": "20",
-      "desc": "adf"
-    },
-    {
-      "name": "Product 1",
-      "desc": "Description product 1",
-      "price": "20",
-      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1644938498/Screen_Shot_2022-02-15_at_22.18.47_ecz2ws.png",
-      "id": "_WwkH8e"
-    },
-    {
+      "id": "TfzAYxU",
       "name": "Product 2",
-      "desc": "Description product 3",
       "price": "30",
-      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645174050/245529760_399847385007912_7441918846735684092_n_yr76v2.jpg",
-      "id": "TfzAYxU"
+      "desc": "Description product 3",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259307/juicy-couture-juicy-quilted-terry-track-jacket_q143os.jpg",
+      "categoryId": "1"
     },
     {
-      "id": "xf21GOq",
-      "name": "Product 4",
-      "price": "14",
-      "desc": "e"
+      "id": "iL9uYo9",
+      "name": "Lemon",
+      "price": "3",
+      "desc": "Stay toasty with this Juicy Couture™ Solid Sleeve Puffer Jacket!\nStand collar.\nLong sleeves.\n100% polyester;\nLining: 100% polyester;\nFilling: 100% polyester.",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259332/brown-bear-vector-graphics_pfa7m9.jpg",
+      "categoryId": "1"
+    },
+    {
+      "name": "Fruit Juice",
+      "desc": "Increase your distance with the superior cushioning of the Fresh Foam Kaymin running shoe from New Balance®.\nPredecessor: None.\nSupport Type: Neutral.\nCushioning: High energizing cushioning.",
+      "price": "5",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259485/new-balance-fresh-foam-kaymin_y8axwt.jpg",
+      "id": "Rme22Mk",
+      "categoryId": "1"
+    },
+    {
+      "name": "Cashew Nut",
+      "desc": "Stay ready for a change in weather with the IZOD® Water and Wind Resistant Insulated Jacket.\nWater-resistant jacket keeps you warm and dry.\nStand collar features an attached hood.\nFront-zip closure.",
+      "price": "20",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259849/-water-and-wind-resistant-insulated-jacket_okq6g3.jpg",
+      "id": "r4faiHf",
+      "categoryId": "2"
+    },
+    {
+      "name": "Hamberger",
+      "desc": "No one can deny your sleek style with these handsome Madden by Steve Madden® Cale 6 oxfords.\nMan-made upper features a plain toe.\nLace-up closure.\nMan-made lining.",
+      "price": "6",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645260836/madden-by-steve-madden-cale-6_ufqfe2.jpg",
+      "id": "MTXKSbp",
+      "categoryId": "2"
+    },
+    {
+      "name": "Potato",
+      "desc": "Break old records and make new goals in the New Balance® Arishi Sport v1.\nPredecessor: None.\nSupport Type: Neutral.\nCushioning: High energizing cushioning.",
+      "price": "5",
+      "categoryId": "75LrUo2",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645428118/brown-bear-cushion_unccbd.jpg",
+      "id": "SuUdG2C"
     }
   ],
   "categories": [
     {
       "id": "2",
-      "name": "Category 2",
-      "avatar": "http://placeimg.com/640/480/business"
+      "name": "Fast Food"
     },
     {
       "id": "1",
-      "name": "Category 3",
-      "avatar": "http://placeimg.com/640/480/business"
+      "name": "Fruit"
     },
     {
-      "name": "Category 4",
-      "avatar": "http://placeimg.com/640/480/business",
+      "name": "Vegetable",
       "id": "75LrUo2"
     }
   ],

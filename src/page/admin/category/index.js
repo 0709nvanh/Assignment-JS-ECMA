@@ -59,7 +59,6 @@ const AdminCate = {
                                                 <thead>
                                                     <tr>
                                                         <th scope="col" class="text-center px-6 py-3 text-[14px] w-[20px] font-bold text-gray-500 uppercase tracking-wider">STT</th>
-                                                        <th scope="col" class="text-center px-6 py-3 text-[14px] font-bold text-gray-500 uppercase tracking-wider">Image</th>
                                                         <th scope="col" class="text-center px-6 py-3 text-[14px] font-bold text-gray-500 uppercase tracking-wider">Name</th>
                                                         <th scope="col" class="text-center px-6 py-3 text-[14px] font-bold text-gray-500 uppercase tracking-wider">Action</th>
                                                     </tr>
@@ -68,11 +67,10 @@ const AdminCate = {
                                                     ${data.map((cate, index) => /*html*/`
                                                     <tr>
                                                         <td class="text-center py-[5px]">${index + 1}</td>
-                                                        <td><img class="items-center w-15 rounded-full h-16 mx-auto py-[5px]" src="${cate.avatar}" width="50"/></td>
                                                         <td class="text-center py-[5px]">${cate.name}</td>
                                                         <td class="items-center text-center">
-                                                            <a class="text-blue-600 hover:font-bold pr-[5px]" href="/admin/category/${cate.id}/edit">Edit</a>
-                                                            <button data-id="${cate.id}" class="btn btn-remove text-red-600 hover:font-bold pr-[5px]">Delete</button>
+                                                            <a class="text-blue-600 hover:font-bold pr-[30px]" href="/admin/category/${cate.id}/edit">Edit</a>
+                                                            <button data-id="${cate.id}" class="btn btn-remove text-red-600 hover:font-bold pl-[15px]">Delete</button>
                                                         </td>
                                                     </tr>
                                                     `).join("")}

@@ -62,7 +62,7 @@ const DetailProduct = {
                                     <hr>
                                     <div class="add-to-card grid grid-cols-[100px,auto] py-3">
                                         <div class="number">
-                                            <input type="number" id="inputValue" class="w-[90px] border rounded-xl border-zinc-300 outline-none p-3">
+                                            <input type="number" id="inputValue" value="1" class="w-[90px] border rounded-xl border-zinc-300 outline-none p-3">
                                         </div>
                                         <button type="button" id="addToCart" class="inline-flex items-center w-[152px] px-4 py-2 border border-transparent rounded-[35px] hover:bg-gray-800 transition-all duration-200 ease-linear shadow-sm text-sm font-medium text-white bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -129,7 +129,7 @@ const DetailProduct = {
       $('#addToCart').addEventListener('click', async () => {
           const { data } = await get(id);
           console.log(data);
-          AddToCart({...data, quantity: $('#inputValue').value ? $('#inputValue').value : 1})
+          AddToCart({...data, quantity: Number($('#inputValue').value) ? Number($('#inputValue').value) : 1})
           toastr.success("Add to success");
       })
   }

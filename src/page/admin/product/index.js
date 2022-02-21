@@ -1,12 +1,16 @@
 
 import { getAll, remove } from "../../../api/product"
+// import getAll from "../../../api/category"
 import NavAdmin from "../../../component/navadmin";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 
 const AllProductAdmin = {
     async render(){
+        // const listCate = await getAll();
+        // const itemCate = await listCate.data.categories;
         const { data } = await getAll();
+        console.log(data);
         return /*html*/`
                     <div class="container-xl">
                         <div class="grid grid-cols-[300px,auto] p-6">
@@ -62,6 +66,7 @@ const AllProductAdmin = {
                                                         <thead>
                                                             <tr>
                                                                 <th scope="col" class="text-center px-6 py-3 text-[14px] w-[20px] font-bold text-gray-500 uppercase tracking-wider">STT</th>
+                                                                <th scope="col" class="text-center px-6 py-3 text-[14px] w-[20px] font-bold text-gray-500 uppercase tracking-wider">Category</th>
                                                                 <th scope="col" class="text-center px-6 py-3 text-[14px] font-bold text-gray-500 uppercase tracking-wider">Image</th>
                                                                 <th scope="col" class="text-center px-6 py-3 text-[14px] font-bold text-gray-500 uppercase tracking-wider">Name</th>
                                                                 <th scope="col" class="text-center px-6 py-3 text-[14px] font-bold text-gray-500 uppercase tracking-wider">Price</th>
@@ -72,6 +77,7 @@ const AllProductAdmin = {
                                                             ${data.map((post, index) => /*html*/`
                                                             <tr>
                                                                 <td class="text-center py-[5px]">${index + 1}</td>
+                                                                <td class="text-center py-[5px]">${post.category.name}</td>
                                                                 <td><img class="items-center w-15 rounded-full h-16 mx-auto py-[5px]" src="${post.avatar}" width="50"/></td>
                                                                 <td class="text-center py-[5px]">${post.name}</td>
                                                                 <td class="text-center py-[5px]">${post.price}</td>
@@ -108,6 +114,7 @@ const AllProductAdmin = {
                 if(confirm){
                     // call api
                     remove(id).then(() => toastr.success("Đã xóa thành công"))
+                              .then(reRender(AllProductAdmin.render()))
                 }
             })
         });
