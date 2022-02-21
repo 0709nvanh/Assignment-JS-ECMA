@@ -3,7 +3,7 @@
     {
       "id": "_WwkH8e",
       "name": "Snack rough cuts",
-      "price": "3,5",
+      "price": 3.5,
       "desc": "Description product 9",
       "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259274/brixton-patrol-all-terrain-anorak-jacket_wesewj.jpg",
       "categoryId": "1"
@@ -11,7 +11,7 @@
     {
       "id": "TfzAYxU",
       "name": "Product 2",
-      "price": "30",
+      "price": 30,
       "desc": "Description product 3",
       "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259307/juicy-couture-juicy-quilted-terry-track-jacket_q143os.jpg",
       "categoryId": "1"
@@ -19,7 +19,7 @@
     {
       "id": "iL9uYo9",
       "name": "Lemon",
-      "price": "3",
+      "price": 34,
       "desc": "Stay toasty with this Juicy Couture™ Solid Sleeve Puffer Jacket!\nStand collar.\nLong sleeves.\n100% polyester;\nLining: 100% polyester;\nFilling: 100% polyester.",
       "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259332/brown-bear-vector-graphics_pfa7m9.jpg",
       "categoryId": "1"
@@ -27,7 +27,7 @@
     {
       "name": "Fruit Juice",
       "desc": "Increase your distance with the superior cushioning of the Fresh Foam Kaymin running shoe from New Balance®.\nPredecessor: None.\nSupport Type: Neutral.\nCushioning: High energizing cushioning.",
-      "price": "5",
+      "price": 59,
       "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259485/new-balance-fresh-foam-kaymin_y8axwt.jpg",
       "id": "Rme22Mk",
       "categoryId": "1"
@@ -35,10 +35,26 @@
     {
       "name": "Cashew Nut",
       "desc": "Stay ready for a change in weather with the IZOD® Water and Wind Resistant Insulated Jacket.\nWater-resistant jacket keeps you warm and dry.\nStand collar features an attached hood.\nFront-zip closure.",
-      "price": "20",
+      "price": 20,
       "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645259849/-water-and-wind-resistant-insulated-jacket_okq6g3.jpg",
       "id": "r4faiHf",
       "categoryId": "2"
+    },
+    {
+      "id": "53kvBsW",
+      "name": "Fruit Juice",
+      "price": 6,
+      "categoryId": "2",
+      "desc": "Snack siêu ngon",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645437913/new-balance-fresh-foam-kaymin_tzols8.jpg"
+    },
+    {
+      "id": "lc6V31U",
+      "name": "Product 4",
+      "price": 8,
+      "categoryId": "2",
+      "desc": "vegetable",
+      "avatar": "http://res.cloudinary.com/dfxsbsoep/image/upload/v1645438228/brown-bear-vector-graphics_bbaclk.jpg"
     }
   ],
   "categories": [

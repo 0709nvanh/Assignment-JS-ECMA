@@ -1,4 +1,6 @@
-import NavAdmin from "./navadmin";
+import { $} from "../utils/selector";
+import { reRender} from "../utils/rerender";
+
 
 const Header = {
     render () {
@@ -10,6 +12,9 @@ const Header = {
             <ul class="flex">
               <li class="ml-[38px]">
                 <a class="text-[14px] pb-[5px] border-b-2 border-white font-semibold text-[#f6f6f7]" href="/">Home</a>
+              </li>
+              <li class="ml-[38px]">
+                <a class="text-[14px] pb-[5px] border-b-2 font-semibold text-[#f6f6f7]" href="/products">Product</a>
               </li>
               <li class="ml-[38px] relative group">
                 <a class="text-[14px] group-hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="/categories">Category</a>
@@ -211,13 +216,13 @@ const Header = {
               <li class="ml-[38px]">
                 <a class="text-[14px] hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="">Contact us</a>
               </li>
+              
             </ul>
           </div>
           <div class="pr-[10px]">
             <div class="item-icon">
               <a href="/signin" class="text-[15px] text-white px-2 font-bold mb-[13px] hover:text-[#4fb68d] cursor-pointer">Sign in</a>
               <a href="/signup" class="text-[15px] text-white px-2 font-bold mb-[13px] hover:text-[#4fb68d] cursor-pointer">Sign up</a>
-              <i class="cursor-pointer fas fa-search text-white font-semibold pr-[15px] text-[20px] hover:text-[#588067] transition-all"></i>
               <a href="/cart"><i class="cursor-pointer fas fa-shopping-cart text-white font-semibold text-[20px] pl-[8px] hover:text-[#63a77c] transition-all"></i></a>
             </div>
           </div>

@@ -9,6 +9,7 @@ import CartPage from "./src/page/cart";
 import CategoryPage from "./src/page/category";
 import DetailProduct from "./src/page/detail";
 import HomePage from "./src/page/home";
+import ProductPage from "./src/page/product";
 import Signin from "./src/page/signin";
 import Signup from "./src/page/signup";
 
@@ -39,6 +40,7 @@ router.on('/admin/*/', () => {
 router.on({
   "/": () => { print(HomePage)},
   "/categories": () => { print(CategoryPage)},
+  "/products": () => { print(ProductPage)},
   "/product/:id": ({ data }) => { print(DetailProduct, data.id)},
   "/admin/dashboard": () => { print(Dashboard)},
   "/admin/products": () => { print(AllProductAdmin)},

@@ -173,8 +173,8 @@ const HomePage = {
         
         `;
   },
-  // afterRender(){
-  //   Header.afterRender();
-  // }
+ afterRender(){
+    Header.afterRender();
+ }
 };
 export default HomePage;
