@@ -24,3 +24,4 @@ export const update = (category) => {
     const url = `/category/${category.id}`;
     return instance.put(url, category);
 }
+

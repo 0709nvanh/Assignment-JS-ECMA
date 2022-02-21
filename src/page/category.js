@@ -8,7 +8,8 @@ const CategoryPage = {
         return /*html*/`
             <div class="container-xl">
                 <div class="header h-[80px] bg-[#253237]">${Header.render()}</div>
-                <div class="py-6">
+                <div class="px-5 py-6">
+                    <h2 class="font-bold py-4 text-[20px]">Category</h2>
                     <div class="grid grid-cols-5 gap-2">
                         ${data.map((cateItem) => /*html*/`
                                 <div key={post.id} class="border p-4 w-[270px] hover:border-cyan-300 rounded-sm">
