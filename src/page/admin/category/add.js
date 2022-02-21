@@ -1,5 +1,7 @@
-import { get } from "../../../api/category"
+import axios from "axios"
+import { add } from "../../../api/category"
 import NavAdmin from "../../../component/navadmin"
+import { $ } from "../../../utils/selector"
 
 const AddCate = {
     render(){
@@ -58,29 +60,26 @@ const AddCate = {
                                                         </div>
                                                     </div>
                                                     <div class="mt-5 md:mt-0 md:col-span-2">
-                                                    <form id="form-add" action="#" method="POST">
-                                                        <div class="shadow sm:rounded-md sm:overflow-hidden">
-                                                            <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
-                                                                <div class="">
-                                                                    <div class="col-span-3 sm:col-span-2">
-                                                                        <label for="company-website" class="block text-sm font-medium text-gray-700"> Name </label>
-                                                                            <div class="mt-1 flex rounded-md shadow-sm">
-                                                                                <input type="text" id="name-category" class="outline-none focus:ring-indigo-500 focus:border-indigo-500 border-b-2 transition-all duration-300 ease-linear p-[5px] flex-1 block w-full sm:text-sm" placeholder="Enter new category...">
+                                                        <form id="form-add" action="#" method="POST">
+                                                            <div class="shadow sm:rounded-md sm:overflow-hidden">
+                                                                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                                                                    <div class="">
+                                                                        <div class="col-span-3 sm:col-span-2">
+                                                                            <label for="company-website" class="block text-sm font-medium text-gray-700"> Name </label>
+                                                                                <div class="mt-1 flex rounded-md shadow-sm">
+                                                                                    <input type="text" id="name-category" class="outline-none focus:ring-indigo-500 focus:border-indigo-500 border-b-2 transition-all duration-300 ease-linear p-[5px] flex-1 block w-full sm:text-sm" placeholder="Enter new category...">
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-
-                                                                    <div>
-                                                                        <input type="file" id="img-category" class="outline-none focus:ring-indigo-500 focus:border-indigo-500 border-b-2 transition-all duration-300 ease-linear p-[5px] flex-1 block w-full sm:text-sm">
-                                                                    </div>
+                                                                </div>
+                                                                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                                                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 
+                                                                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                                                 </div>
                                                             </div>
-                                                            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                                                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 
-                                                                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
-                                                            </div>
-                                                        </div>
-                                                    </form>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -93,14 +92,13 @@ const AddCate = {
             `
     },
     afterRender(){
-        $('#form-add').addEventListener("submit",  async (e) => {
+        $('#form-add').addEventListener("submit", (e) => {
             e.preventDefault();
-
-            $('#img-category').files[0];
-            const CLOUDINARY = "https://api.cloudinary.com/v1_1/dv9a60utr/image/upload";
-            
-            const formData = new FormData();
-            formData.append("")
+            add({
+                name: $('#name-category').value
+            }).then(() => {
+                document.location.href = "/admin/categories"
+            })
         })
     }
 }

@@ -1,7 +1,7 @@
 
 import { getAll, remove } from "../../../api/product"
-// import getAll from "../../../api/category"
 import NavAdmin from "../../../component/navadmin";
+import { reRender } from '../../../utils/rerender'
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 
@@ -114,7 +114,7 @@ const AllProductAdmin = {
                 if(confirm){
                     // call api
                     remove(id).then(() => toastr.success("Đã xóa thành công"))
-                              .then(reRender(AllProductAdmin.render()))
+                              .then(reRender(AllProductAdmin, "#content"))
                 }
             })
         });

@@ -1,5 +1,7 @@
-import { getAll } from "../../../api/category";
+import { getAll, remove } from "../../../api/category";
 import NavAdmin from "../../../component/navadmin";
+import { reRender } from '../../../utils/rerender'
+import { $ } from '../../../utils/selector';
 
 const AdminCate = {
     async render(){
@@ -69,7 +71,7 @@ const AdminCate = {
                                                         <td class="text-center py-[5px]">${index + 1}</td>
                                                         <td class="text-center py-[5px]">${cate.name}</td>
                                                         <td class="items-center text-center">
-                                                            <a class="text-blue-600 hover:font-bold pr-[30px]" href="/admin/category/${cate.id}/edit">Edit</a>
+                                                            <a class="text-blue-600 hover:font-bold pr-[30px]" href="/admin/categories/${cate.id}/edit">Edit</a>
                                                             <button data-id="${cate.id}" class="btn btn-remove text-red-600 hover:font-bold pl-[15px]">Delete</button>
                                                         </td>
                                                     </tr>
@@ -88,6 +90,19 @@ const AdminCate = {
                 </div>
             </div>
         `
+    },
+    afterRender(){
+        $('.btn-remove').forEach(button =>{
+            button.addEventListener('click', () => {
+                const id = button.dataset.id;
+                const confirm = window.confirm("May co chac chan muon xoa khong???");
+                if(confirm){
+                    // call api
+                    remove(id).then(() => toastr.success("Delete successfully"))
+                              .then(reRender(AdminCate, '#content'))
+                }
+            })
+        })
     }
 }
 
