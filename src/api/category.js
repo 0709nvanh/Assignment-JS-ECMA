@@ -4,7 +4,6 @@ export const getAll = () => {
     const url = "/categories";
     return instance.get(url)
 }
-
 export const get = (id) => {
     const url = `/category/${id}`;
     return instance.get(url);
