@@ -14,7 +14,6 @@ export const add = (category) => {
     const url = "/category";
     return instance.post(url, category);
 }
-
 export const remove = (id) => {
     const url = `/products/${id}`;
     return instance.delete(url)
