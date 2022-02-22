@@ -40,6 +40,7 @@ router.on('/admin/*/', () => {
 router.on({
   "/": () => { print(HomePage)},
   "/categories": () => { print(CategoryPage)},
+  "/categories/:id?_embed": () => { print(CategoryPage)},
   "/products": () => { print(ProductPage)},
   "/product/:id": ({ data }) => { print(DetailProduct, data.id)},
   "/admin/dashboard": () => { print(Dashboard)},

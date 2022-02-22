@@ -1,6 +1,7 @@
 import { getAll, search } from "../api/product"
 import Footer from "../component/footer";
 import Header from "../component/header";
+import ListCategory from "../component/listcate";
 import { $ } from "../utils/selector";
 
 const ProductPage = {
@@ -9,17 +10,28 @@ const ProductPage = {
         return /*html*/`
                 <div class="container-xl">
                     <div class="header h-[80px] bg-[#253237]">${Header.render()}</div>
-                    <div>
+                    <div class="pt-6">
                         <div class="grid grid-cols-[300px,auto]">
-                            <div>
-                                
+                            <div class="listCate">
+                                <div class="p-3">
+                                    <div class="pt-5 pl-6 max-full">
+                                        <li class="flex relative">
+                                            <input type="search" id="name-category" class="outline-none focus:ring-indigo-500 focus:border-indigo-500 border-b-2 transition-all w-[276px] duration-300 ease-linear p-[5px] flex-1 block sm:text-sm" placeholder="Search ...">
+                                            <button type="submit"><i class="absolute right-0 top-[6px] cursor-pointer fas fa-search text-black font-semibold pr-[15px] text-[20px] hover:text-[#588067] transition-all"></i></button>
+                                        </li>
+                                    </div>
+                                    <div>
+                                        ${await ListCategory.render()}
+                                    </div>
+                                </div>
                             </div>
                             <div class="mx-auto px-5 py-6">
-                                <div class="py-4">
-                                    <li class="ml-[38px] flex relative">
-                                        <input type="search" id="name-category" class="outline-none focus:ring-indigo-500 focus:border-indigo-500 border-b-2 transition-all duration-300 ease-linear p-[5px] flex-1 block w-full sm:text-sm" placeholder="Enter new category...">
-                                        <button type="submit"><i class="absolute right-0 top-[6px] cursor-pointer fas fa-search text-black font-semibold pr-[15px] text-[20px] hover:text-[#588067] transition-all"></i></button>
-                                    </li>
+                                <div class="py-4 flex">
+                                    <p>Sort by</p>
+                                    <select name="" id="input" class="form-control" required="required">
+                                        <option value=""></option>
+                                    </select>
+                                    
                                 </div>
                                 <div class="grid grid-cols-5 gap-2" id="list-product">
                                     ${data.map((post) => /*html*/`

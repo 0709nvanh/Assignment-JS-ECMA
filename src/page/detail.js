@@ -1,7 +1,6 @@
 import { get, getAll } from "../api/product";
 import { AddToCart } from "../utils/cart";
 import { $ } from "../utils/selector";
-
 import Footer from "../component/footer";
 import Header from "../component/header";
 import toastr from "toastr";

@@ -23,7 +23,8 @@ export const update = (category) => {
     return instance.put(url, category);
 }
 
-// export const getProduct = (id) => {
-//     const url = `/categories/`
-// }
+export const getProduct = (id,product) => {
+    const url = `/categories/${id}?_embed=products`;
+    return instance.get(url,product)
+}
 

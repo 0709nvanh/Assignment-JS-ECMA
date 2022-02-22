@@ -1,7 +1,3 @@
-import { $} from "../utils/selector";
-import { reRender} from "../utils/rerender";
-
-
 const Header = {
     render () {
       return /*html*/`
@@ -14,7 +10,7 @@ const Header = {
                 <a class="text-[14px] pb-[5px] border-b-2 border-white font-semibold text-[#f6f6f7]" href="/">Home</a>
               </li>
               <li class="ml-[38px]">
-                <a class="text-[14px] pb-[5px] border-b-2 font-semibold text-[#f6f6f7]" href="/products">Product</a>
+                <a class="text-[14px] hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="/products">Product</a>
               </li>
               <li class="ml-[38px] relative group">
                 <a class="text-[14px] group-hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="/categories">Category</a>

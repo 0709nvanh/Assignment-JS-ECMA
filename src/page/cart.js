@@ -48,9 +48,9 @@ const CartPage = {
                             </div>
                             <div class="cart border h-[270px]">
                                 <div class="py-3">
-                                    <div class="p-5">
+                                    <div class="p-5 grid grid-cols-2 gap-4">
                                         <p>items: <span id="itemTotalQuantity"></span></p>
-                                        <p>Price: <span id="totalPrice"></span> $</p>
+                                        <p><span id="totalPrice"></span> $</p>
                                     </div>
                                     
                                 </div>
