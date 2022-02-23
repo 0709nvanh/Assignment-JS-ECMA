@@ -52,7 +52,11 @@ const CartPage = {
                                         <p>items: <span id="itemTotalQuantity"></span></p>
                                         <p><span id="totalPrice"></span> $</p>
                                     </div>
-                                    
+                                    <div class="mx-auto p-5">
+                                        <button type="button" id="addToCart" class="inline-flex items-center px-4 py-2 border border-transparent rounded-[35px] hover:bg-gray-800 transition-all duration-200 ease-linear shadow-sm text-sm font-medium text-white bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            Proceed To Checkout
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

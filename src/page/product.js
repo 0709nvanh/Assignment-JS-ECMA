@@ -1,15 +1,16 @@
-import { getAll, search } from "../api/product"
+import { getAll, search, sortName, sortProduct } from "../api/product"
 import Footer from "../component/footer";
 import Header from "../component/header";
 import ListCategory from "../component/listcate";
 import { $ } from "../utils/selector";
+import searchs from "./search";
 
 const ProductPage = {
     async render(){
         const { data } = await getAll();
         return /*html*/`
                 <div class="container-xl">
-                    <div class="header h-[80px] bg-[#253237]">${Header.render()}</div>
+                    <div class="header h-[80px] bg-[#253237]">${await Header.render()}</div>
                     <div class="pt-6">
                         <div class="grid grid-cols-[300px,auto]">
                             <div class="listCate">
@@ -28,8 +29,11 @@ const ProductPage = {
                             <div class="mx-auto px-5 py-6">
                                 <div class="py-4 flex">
                                     <p>Sort by</p>
-                                    <select name="" id="input" class="form-control" required="required">
-                                        <option value=""></option>
+                                    <select name="" id="sortProduct" class="form-control" required="required">
+                                        <option value="asc">Tang dan</option>
+                                        <option value="desc">Giam dan</option>
+                                        <option value="nameasc">A-Z</option>
+                                        <option value="namedesc" >Z-A</option>
                                     </select>
                                     
                                 </div>
@@ -65,7 +69,7 @@ const ProductPage = {
     },
      afterRender(){
       const key = $('input[type="search"]');
-      key.addEventListener('keyup',async()=> {
+      key.addEventListener('keyup', async () => {
           console.log(key.value);
           const {data} = await search(key.value)
           $('#list-product').innerHTML = 
@@ -90,8 +94,21 @@ const ProductPage = {
                 </div>
             </div>
         `).join("")
-        
-      })
+    })
+    $("#sortProduct").addEventListener('change',async()=>{
+        const sort = $("#sortProduct").value
+        if (sort == 'nameasc') {
+            searchs.render((await sortName('asc')).data)
+        }
+        else if(sort == 'namedesc'){
+            searchs.render((await sortName('desc')).data)
+        }
+        else if (sort== 'asc') {
+            searchs.render((await sortProduct('asc')).data)
+        }else if (sort== 'desc') {
+            searchs.render((await sortProduct('desc')).data)
+        }
+    })
     }
 }
 export default ProductPage;

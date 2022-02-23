@@ -14,7 +14,7 @@ const DetailProduct = {
     const productItems = products.data.filter((product) => product.id !== id);
     return /*html*/ `
             <div>
-                <div class="header h-[80px] bg-[#253237]">${Header.render()}</div>
+                <div class="header h-[80px] bg-[#253237]">${await Header.render()}</div>
                 <div class="text-center relative py-[110px] w-full h-full bg-no-repeat bg-cover" style="background-image: url('http://demo.posthemes.com/pos_ecolife/layout3/themes/theme_ecolife3/assets/img/bg_breadcrumb.jpg')">
                     <div class="container mx-auto">
                         <nav class="text-center">

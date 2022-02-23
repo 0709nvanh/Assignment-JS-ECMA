@@ -6,8 +6,8 @@ import AllProductAdmin from "./src/page/admin/product";
 import AddNewProduct from "./src/page/admin/product/add";
 import UpdateProduct from "./src/page/admin/product/update";
 import CartPage from "./src/page/cart";
-import CategoryPage from "./src/page/category";
 import DetailProduct from "./src/page/detail";
+import DetailCategory from "./src/page/detailcate";
 import HomePage from "./src/page/home";
 import ProductPage from "./src/page/product";
 import Signin from "./src/page/signin";
@@ -40,7 +40,7 @@ router.on('/admin/*/', () => {
 router.on({
   "/": () => { print(HomePage)},
   "/categories": () => { print(CategoryPage)},
-  "/categories/:id?_embed": () => { print(CategoryPage)},
+  "/categories/:id": ({ data }) => { print(DetailCategory, data.id)},
   "/products": () => { print(ProductPage)},
   "/product/:id": ({ data }) => { print(DetailProduct, data.id)},
   "/admin/dashboard": () => { print(Dashboard)},

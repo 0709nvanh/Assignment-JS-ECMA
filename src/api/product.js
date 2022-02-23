@@ -29,6 +29,11 @@ export const search = (keyword)=>{
     return instance.get(url)
 }
 
-// export const sort_ads = {
-
-// }
+export const sortProduct = (event) => {
+    const url = `products?_sort=price&_order=${event}`
+    return instance.get(url)
+}
+export const sortName = (event) => {
+    const url = `products?_sort=name&_order=${event}`
+    return instance.get(url)
+}

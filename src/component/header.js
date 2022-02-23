@@ -1,5 +1,8 @@
+import { getAll } from "../api/category";
+
 const Header = {
-    render () {
+    async render () {
+      const { data } = await getAll();
       return /*html*/`
         <div class="header-top flex items-center justify-between">
           <div class="flex items-center">
@@ -9,11 +12,9 @@ const Header = {
               <li class="ml-[38px]">
                 <a class="text-[14px] pb-[5px] border-b-2 border-white font-semibold text-[#f6f6f7]" href="/">Home</a>
               </li>
-              <li class="ml-[38px]">
-                <a class="text-[14px] hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="/products">Product</a>
-              </li>
+              
               <li class="ml-[38px] relative group">
-                <a class="text-[14px] group-hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="/categories">Category</a>
+                <a class="text-[14px] group-hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="/products">Product</a>
                 <div class="absolute invisible z-50 opacity-0 duration-300 group-hover:opacity-100 group-hover:visible group-hover:rotate-0 -rotate-[75] 
                 bg-white -left-[50px] top-[40px] p-[20px] box-border w-[1100px] border-2">
                   <div class="flex pb-[20px]">
@@ -156,57 +157,14 @@ const Header = {
                 </div>
               </li>
               <li class="ml-[38px] relative group">
-                <a
-                  class="text-[14px] hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]"
-                  href="">Blog</a>
-                <ul
-                  class="absolute opacity-0 invisible border-l-[1px] border-r-[1px] duration-300 group-hover:opacity-100 group-hover:visible group-hover:rotate-0 -rotate-[75] bg-white left-[0px] top-[40px] w-[215px] h-[168px]"
-                >
-                  <li
-                    class="text-[15px] px-[15px] hover:text-[#4fb68d] py-[5px] border-b-[1px]"
-                  >
-                    <a
-                      class="hover:translate-x-[10px] duration-300 cursor-pointer hover:text-[#4fb68d] hover:translate-x-[10px] duration-300 cursor-pointer block"
-                      href=""
-                      >Potatoes & Sweet Potatoes
-                    </a>
-                  </li>
-                  <li
-                    class="text-[15px] px-[15px] hover:text-[#4fb68d] py-[5px] border-b-[1px]"
-                  >
-                    <a
-                      class="hover:translate-x-[10px] duration-300 cursor-pointer hover:text-[#4fb68d] hover:translate-x-[10px] duration-300 cursor-pointer block"
-                      href=""
-                      >Onions & Leeks
-                    </a>
-                  </li>
-                  <li
-                    class="text-[15px] px-[15px] hover:text-[#4fb68d] py-[5px] border-b-[1px]"
-                  >
-                    <a
-                      class="hover:translate-x-[10px] duration-300 cursor-pointer hover:text-[#4fb68d] hover:translate-x-[10px] duration-300 cursor-pointer block"
-                      href=""
-                      >Carrots & Root Vegetables
-                    </a>
-                  </li>
-                  <li
-                    class="text-[15px] px-[15px] hover:text-[#4fb68d] py-[5px] border-b-[1px]"
-                  >
-                    <a
-                      class="hover:translate-x-[10px] duration-300 cursor-pointer hover:text-[#4fb68d] hover:translate-x-[10px] duration-300 cursor-pointer block"
-                      href=""
-                      >Broccoli & Cauliflower
-                    </a>
-                  </li>
-                  <li
-                    class="text-[15px] px-[15px] hover:text-[#4fb68d] py-[5px] border-b-[1px]"
-                  >
-                    <a
-                      class="hover:translate-x-[10px] duration-300 cursor-pointer hover:text-[#4fb68d] hover:translate-x-[10px] duration-300 cursor-pointer block"
-                      href=""
-                      >Cabbages & Greens
-                    </a>
-                  </li>
+                <a class="text-[14px] hover:border-b-2 pb-[5px] font-semibold text-[#f6f6f7]" href="">Category</a>
+                <ul class="absolute opacity-0 invisible border-l-[1px] border-r-[1px] duration-300 group-hover:opacity-100 group-hover:visible group-hover:rotate-0 -rotate-[75] bg-white left-[0px] top-[40px] w-[215px] max-h">
+                  ${data.map(itemCate => /*html*/`
+                    <li class="text-[15px] px-[15px] hover:text-[#4fb68d] py-[5px] border-b-[1px]">
+                      <a class="hover:translate-x-[10px] duration-300 cursor-pointer hover:text-[#4fb68d] block"
+                        href="/#/categories/${itemCate.id}">${itemCate.name}</a>
+                    </li>
+                  `).join("")}
                 </ul>
               </li>
               <li class="ml-[38px]">

@@ -7,7 +7,7 @@ const HomePage = {
   async render() {
     return /*html*/ `
       <div class="container-xl">
-        <div class="header h-[80px] bg-[#253237]">${Header.render()}</div>
+        <div class="header h-[80px] bg-[#253237]">${await Header.render()}</div>
         <div class="relative">
           <div class="banner-small grid grid-cols-2 gap-8 pb-6 px-5 py-6">
             <div class="">
